@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         quoteAdapter=QuotePagingAdapter()
         binding.quoteList.layoutManager=LinearLayoutManager(this)
         binding.quoteList.adapter=quoteAdapter
-
+        binding.quoteList
         getQuotes()
     }
 
