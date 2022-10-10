@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.quickpagingdemo.databinding.ActivityMainBinding
+import com.example.quickpagingdemo.paging.LoadAdapter
 import com.example.quickpagingdemo.paging.QuotePagingAdapter
 import com.example.quickpagingdemo.viewmodel.QuoteViewModel
 import com.example.quickpagingdemo.viewmodel.QuoteViewModelFactory
@@ -34,7 +35,10 @@ class MainActivity : AppCompatActivity() {
 
         quoteAdapter=QuotePagingAdapter()
         binding.quoteList.layoutManager=LinearLayoutManager(this)
-        binding.quoteList.adapter=quoteAdapter
+        binding.quoteList.adapter=quoteAdapter.withLoadStateHeaderAndFooter(
+            header = LoadAdapter(),
+            footer = LoadAdapter()
+        )
         getQuotes()
     }
 
