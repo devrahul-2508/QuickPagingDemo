@@ -12,7 +12,7 @@ class DataBaseModule {
 
     @Singleton
     @Provides
-    fun provideFakerDB(context: Context):QuoteDatabase{
+    fun provideQuoteDb(context: Context):QuoteDatabase{
         return Room.databaseBuilder(
             context,
             QuoteDatabase::class.java,

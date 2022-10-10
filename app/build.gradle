@@ -13,7 +13,6 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -62,6 +61,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-paging:2.4.3"
 
     def coroutines_version = "1.6.0"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
