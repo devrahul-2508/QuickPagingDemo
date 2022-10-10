@@ -9,6 +9,7 @@ import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.quickpagingdemo.databinding.ActivityMainBinding
+import com.example.quickpagingdemo.di.DaggerApplicationComponent
 import com.example.quickpagingdemo.paging.LoadAdapter
 import com.example.quickpagingdemo.paging.QuotePagingAdapter
 import com.example.quickpagingdemo.viewmodel.QuoteViewModel
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         (application as QuoteApplication).applicationComponent.inject(this)
 
-        quoteViewModel=ViewModelProvider(this,quoteViewModelFactory).get(QuoteViewModel::class.java)
+        quoteViewModel= ViewModelProvider(this,quoteViewModelFactory)[QuoteViewModel::class.java]
 
         quoteAdapter=QuotePagingAdapter()
         binding.quoteList.layoutManager=LinearLayoutManager(this)

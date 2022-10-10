@@ -8,9 +8,15 @@ import javax.inject.Singleton
 
 
 @Singleton
-@Component(modules = [RetrofitModule::class])
+@Component(modules = [RetrofitModule::class,DataBaseModule::class])
 interface ApplicationComponent {
     fun inject(mainActivity: MainActivity)
+
+    @Component.Factory
+    interface Factory{
+        fun create(@BindsInstance context: Context):ApplicationComponent
+    }
+
 
 
 }
